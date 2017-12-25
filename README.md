@@ -2,10 +2,10 @@
 
 A Node.js module for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt.
 
-*WINDOWS ONLY!*
+*WINDOWS __ONLY!__*
 
 ### Dependencies
-  * [windows](https://www.npmjs.com/package/windows)
+  *[windows](https://www.npmjs.com/package/windows)
 <br><br>
 ### Exports
 
