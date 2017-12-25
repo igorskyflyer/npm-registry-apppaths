@@ -9,7 +9,7 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
  ```getKeys(),```
 
  ```isInstalled()```.
-
+<br><br>
  ### Usage
 
  ```getKeys()```
