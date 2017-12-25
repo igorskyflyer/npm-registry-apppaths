@@ -4,6 +4,9 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 *WINDOWS ONLY!*
 
+### Dependecies
+  * [windows](https://www.npmjs.com/package/windows)
+<br><br>
 ### Exports
 
  ```getKeys(),```
