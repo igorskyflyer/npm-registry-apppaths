@@ -1,0 +1,28 @@
+{
+  "name": "registry-apppaths",
+  "version": "1.0.2",
+  "description": "A Node.js module for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorskyflyer/node-registry-apppaths.git"
+  },
+  "keywords": [
+    "registry",
+    "windows",
+    "apppaths",
+    "applications",
+    "packages",
+    "user"
+  ],
+  "author": "Igor Dimitrijević",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorskyflyer/node-registry-apppaths/issues"
+  },
+  "homepage": "https://github.com/igorskyflyer/node-registry-apppaths#readme",
+  "dependencies": {
+    "windows": "0.0.6"
+  }
+}
