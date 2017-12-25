@@ -4,23 +4,26 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 *WINDOWS __ONLY!__*
 
-### Dependencies
-  *[windows](https://www.npmjs.com/package/windows)
-<br><br>
 ### Exports
 
  ```getKeys(),```
 
  ```isInstalled()```.
 <br><br>
- ### Usage
 
- ```getKeys()```
+### Usage
 
- Returns an array of sub-key names located in the AppPaths key.
- <br><br>
- ```isInstalled(name, strict)```
+```getKeys()```
 
- Returns a Boolean indicating whether a given application is installed. Can be matched strictly or not.
+Returns an array of sub-key names located in the AppPaths key.
 
+Example output<br>
+```['excel.exe', 'iexplore.exe', 'mplayer2.exe' ...]```
 
+<br><br>
+```isInstalled(name, strict)```
+
+Returns a Boolean indicating whether a given application is installed. Can be matched strictly or not.
+
+Example output<br>
+```isInstalled('winword.exe') = true```
