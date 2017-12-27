@@ -19,8 +19,8 @@ function isInstalled(name, strict = false) {
   result = (keys.indexOf(name) > -1);
  }
  else {
-  keys.forEach((path) => {
-   if(path.indexOf(name) > -1) {
+  keys.forEach((key) => {
+   if(key.indexOf(name) > -1) {
     result = true;
     return;
    }
