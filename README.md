@@ -4,14 +4,6 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 *WINDOWS __ONLY!__*
 
-### Install
-
-```npm i registry-apppaths```
-
-or
-
-click [here](https://www.npmjs.com/package/registry-apppaths).
-
 ### Exports
 
  ```getKeys(),```
@@ -35,3 +27,12 @@ Returns a Boolean indicating whether a given application is installed. Can be ma
 
 Example output<br>
 ```isInstalled('winword.exe') = true```
+
+<br><br>
+Full example<br>
+```
+const appPaths = require('appPaths');
+
+console.log(`Application list => ${getKeys()}`);
+console.log(`Chrome is installed: ${isInstalled('chrome') ? 'yes' : 'no'}`);
+```
