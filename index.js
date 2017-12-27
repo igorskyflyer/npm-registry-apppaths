@@ -1,14 +1,19 @@
 const windows = require('windows');
 const appPaths = windows.registry('HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths');
 
-let keys = [];
+let keys = null;
 
 function init() {
- getKeys();
+ refresh();
+}
+
+function refresh() {
+ keys = Object.keys(appPaths);
 }
 
 function getKeys() {
- keys = Object.keys(appPaths);
+ if(keys === null) refresh();
+
  return keys;
 }
 
@@ -30,9 +35,10 @@ function isInstalled(name, strict = false) {
  return result;
 }
 
-init();
+refresh();
 
 module.exports = {
+ refresh,
  getKeys,
  isInstalled
 }

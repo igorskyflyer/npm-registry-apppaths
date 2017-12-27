@@ -29,9 +29,14 @@ Example output<br>
 ```isInstalled('winword.exe') = true```
 
 <br><br>
+```refresh()```
+
+Refetches the info from the registry.
+
+<br><br>
 Full example<br>
 ```
-const appPaths = require('appPaths');
+const appPaths = require('registry-apppaths');
 
 console.log(`Application list => ${getKeys()}`);
 console.log(`Chrome is installed: ${isInstalled('chrome') ? 'yes' : 'no'}`);

@@ -2,6 +2,7 @@ const assert = require('chai').assert;
 const appPaths = require('../index');
 
 describe('AppPaths test', () => {
+ 
  describe('getKeys()', () => {
   it('should be an array', () => {
    assert.isArray(appPaths.getKeys(), true);
