@@ -31,7 +31,7 @@ console.log(apps);
 
 ```.has(list)```
 
-Returns an array of Booleans values indicating whether the entries of the parameter &lt;Array&gt;**list** are installed on the system. 
+Returns an array of Booleans indicating whether the entries of the parameter &lt;Array&gt;**list** are installed on the system. 
 
 ```
 const appPaths = require('registry-apppaths');
