@@ -33,6 +33,8 @@ function has(list) {
  
  apps = apps || get();
 
+ if(apps.length === 0) return [];
+
  for(let i = 0, count = list.length; i < count; i++) {
   let current = list[i];
   let isPresent = (apps.indexOf(current) > -1);
@@ -63,9 +65,6 @@ function refresh() {
  apps = [];
  get();
 }
-
-get();
-has(['chrome.exe', 'chrome']);
 
 module.exports = {
  get, has, refresh
