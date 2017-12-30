@@ -4,10 +4,14 @@ const appPaths = require('../index');
 describe('AppPaths test', () => {
 
  describe('getApps()', () => {
+
   it('should be an array', () => {
-   appPaths.getApps().then((apps) => {
-    assert.isArray(apps);
-   });
+   assert.isArray(appPaths.getApps());
   });
+
+  it('length should be >0', () => {
+   assert.isAbove(appPaths.getApps().length, 0);
+  });
+
  });
 });

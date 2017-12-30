@@ -1,33 +1,24 @@
-const exec = require('child_process').exec;
+const execSync = require('child_process').execSync;
 
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
 const searchKey = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\';
 
 let apps = [];
-let normalize = false;
 
 function getApps(normalize = false) {
  let output;
 
- return new Promise((resolve, reject) => {
-  const process = execSync(`reg query "${regKey}" && exit`, (err, stdout, stderr) => {
-   if(err) {
-    reject(err);
-    return;
-   }
+ try {
+  const query = execSync(`reg query "${regKey}" && exit`);
+  output = query.toString();
+  generateKeys(output, normalize);
+ }
+ catch(exp) {
+  console.log(exp);
+  return null;
+ }
 
-   if(stderr !== '') {
-    reject(err);
-    return;
-   }
-  
-   if(stdout === '') return;
-
-   output = stdout.toString();
-   generateKeys(output, normalize);
-   resolve(apps);
-  });
- });
+ return apps;
 }
 
 function generateKeys(data, normalize) {
