@@ -3,39 +3,39 @@ const execSync = require('child_process').execSync;
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
 const searchKey = 'hkey_local_machine\\software\\microsoft\\windows\\currentversion\\app paths\\';
 
-let apps = [];
+let apps;
 
 function get() {
- if(apps.length > 0) return apps;
+ if(apps && apps.length) return apps;
 
  let output;
 
  try {
+  const now = Date.now();
   const query = execSync(`reg query "${regKey}" && exit`);
 
-  if(!query) return null;
+  if(!query) return [];
 
   output = query.toString().toLowerCase();
   generateKeys(output);
  }
  catch(exp) {
   console.log(exp);
-  return null;
+  return [];
  }
 
  return apps;
 }
 
 function has(list) {
- if(!list || !list instanceof Array) return;
+ if(!list || !list instanceof Array || !list.length) return [];
 
  let result = [];
  
- if(apps.length === 0) apps = get();
+ if(!apps || !apps.length) apps = get();
 
  for(let i = 0, count = list.length; i < count; i++) {
-  let current = list[i];
-  let isPresent = (apps.indexOf(current) > -1);
+  let isPresent = (apps.indexOf(list[i]) > -1);
 
   result.push(isPresent);
 
@@ -50,6 +50,8 @@ function generateKeys(data) {
 
  if(data.length === 0) return;
 
+ apps = [];
+
  data.pop();
  data.shift();
 
@@ -60,7 +62,8 @@ function generateKeys(data) {
 }
 
 function refresh() {
- apps = get();
+ apps = [];
+ return get();
 }
 
 module.exports = {
