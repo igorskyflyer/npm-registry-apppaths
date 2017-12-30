@@ -14,7 +14,7 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 ### Usage
 
-```.get()```
+```.get() => string[]```
 
 Returns an array of sub-keys located in the AppPaths key.
 
@@ -29,9 +29,9 @@ console.log(apps);
 
 <br>
 
-```.has(list)```
+```.has(list) => boolean[]```
 
-Returns an array of Booleans indicating whether the entries of the parameter &lt;Array&gt;**list** are installed on the system. 
+Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system. 
 
 ```
 const appPaths = require('registry-apppaths');
@@ -43,13 +43,13 @@ console.log(has);
 ```
 <br>
 
-```.refresh()```
+```.refresh() => void```
 
 Force refresh the info from the registry, instead of retrieving the cached data.
 
 ```
 const appPaths = require('registry-apppaths');
-const apps = appPaths.get();
+let apps = appPaths.get();
  
 console.log(apps);
 
@@ -58,6 +58,8 @@ console.log(apps);
 // application install method...
 
 appPaths.refresh();
+
+apps = appPaths.get();
 
 console.log(apps);
 
