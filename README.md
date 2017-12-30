@@ -8,17 +8,13 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
  ```getApps()```
 
+<br>
+
 ### Usage
 
 ```getApps()```
 
 Returns an array of sub-keys located in the AppPaths key.
-
-Example output<br>
-```['excel.exe', 'iexplore.exe', 'mplayer2.exe'...]```
-
-<br>
-Full example
 
 ```
 const appPaths = require('registry-apppaths');
