@@ -13,5 +13,9 @@ describe('AppPaths test', () => {
    assert.isAbove(appPaths.getApps().length, 0);
   });
 
+  it('should be a string, ending with ".exe"', () => {
+   assert.isString(appPaths.getApps()[0]);
+  });
+
  });
 });
