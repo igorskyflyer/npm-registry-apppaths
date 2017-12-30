@@ -25,8 +25,6 @@ Example output<br>
 
 <br>
 Full example<br>
-```
-const appPaths = require('registry-apppaths');
-
+```const appPaths = require('registry-apppaths');
 console.log(`Application list => ${getApps()}`);
 ```
