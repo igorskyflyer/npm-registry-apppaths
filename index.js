@@ -5,7 +5,7 @@ const searchKey = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVers
 
 let apps = [];
 
-function getApps() {
+function get() {
  if(apps.length > 0) return apps;
 
  let output;
@@ -26,6 +26,25 @@ function getApps() {
  return apps;
 }
 
+function has(list) {
+ if(!options || !options instanceof Array) return;
+
+ let result = {};
+ 
+ apps = apps || get();
+
+ for(let i = 0, count = options.length; i < count; i++) {
+  let current = options[i];
+  let isPresent = (apps.indexOf(current) > -1);
+
+  result[current] = isPresent;
+
+  if(isPresent) continue;
+ }
+
+ return result;
+}
+
 function generateKeys(data) {
  data = data.split('\r\n');
 
@@ -42,9 +61,9 @@ function generateKeys(data) {
 
 function refresh() {
  apps = [];
- getApps();
+ get();
 }
 
 module.exports = {
- getApps
+ get, has, refresh
 }
