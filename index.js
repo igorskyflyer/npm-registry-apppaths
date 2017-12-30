@@ -1,3 +1,5 @@
+const performance = require('perf_hooks');
+
 const execSync = require('child_process').execSync;
 
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
@@ -5,13 +7,16 @@ const searchKey = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVers
 
 let apps = [];
 
-function getApps(normalize = false) {
+function getApps() {
  let output;
 
  try {
   const query = execSync(`reg query "${regKey}" && exit`);
-  output = query.toString();
-  generateKeys(output, normalize);
+
+  if(!query) return null;
+
+  output = query.toString().toLowerCase();
+  generateKeys(output);
  }
  catch(exp) {
   console.log(exp);
@@ -21,7 +26,7 @@ function getApps(normalize = false) {
  return apps;
 }
 
-function generateKeys(data, normalize) {
+function generateKeys(data) {
  data = data.split('\r\n');
 
  if(data.length === 0) return;
@@ -32,13 +37,8 @@ function generateKeys(data, normalize) {
  data.shift();
 
  data.forEach((value) => {
-  let key = value;
-
-  key = key.replace(searchKey, '');
-
-  if(normalize) key = key.toLowerCase();
-
-  apps.push(key);
+  value = value.replace(searchKey, '');
+  apps.push(value);
  });
 }
 
