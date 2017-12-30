@@ -27,8 +27,9 @@ Full example
 
 ```
 const appPaths = require('registry-apppaths');
+const apps = appPaths.getApps(true);
+ 
+console.log(apps);
 
-appPaths.getApps((apps) => {
- console.log(apps);
-});
+// ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 ```
