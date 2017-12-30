@@ -29,17 +29,15 @@ function get() {
 function has(list) {
  if(!list || !list instanceof Array) return;
 
- let result = {};
+ let result = [];
  
- apps = apps || get();
-
- if(apps.length === 0) return [];
+ if(apps.length === 0) get();
 
  for(let i = 0, count = list.length; i < count; i++) {
   let current = list[i];
   let isPresent = (apps.indexOf(current) > -1);
 
-  result[current] = isPresent;
+  result.push(isPresent);
 
   if(isPresent) continue;
  }
