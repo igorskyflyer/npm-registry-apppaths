@@ -1,4 +1,4 @@
-const execSync = require('child_process').execSync;
+const exec = require('child_process').exec;
 
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
 const searchKey = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\';
