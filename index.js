@@ -27,14 +27,14 @@ function get() {
 }
 
 function has(list) {
- if(!options || !options instanceof Array) return;
+ if(!list || !list instanceof Array) return;
 
  let result = {};
  
  apps = apps || get();
 
- for(let i = 0, count = options.length; i < count; i++) {
-  let current = options[i];
+ for(let i = 0, count = list.length; i < count; i++) {
+  let current = list[i];
   let isPresent = (apps.indexOf(current) > -1);
 
   result[current] = isPresent;
