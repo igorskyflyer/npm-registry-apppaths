@@ -31,7 +31,7 @@ function has(list) {
 
  let result = [];
  
- if(apps.length === 0) get();
+ if(apps.length === 0) apps = get();
 
  for(let i = 0, count = list.length; i < count; i++) {
   let current = list[i];
@@ -60,8 +60,7 @@ function generateKeys(data) {
 }
 
 function refresh() {
- apps = [];
- get();
+ apps = get();
 }
 
 module.exports = {
