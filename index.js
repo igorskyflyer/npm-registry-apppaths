@@ -1,7 +1,7 @@
 const execSync = require('child_process').execSync;
 
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
-const searchKey = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\';
+const searchKey = 'hkey_local_machine\\software\\microsoft\\windows\\currentversion\\app paths\\';
 
 let apps = [];
 
@@ -63,6 +63,9 @@ function refresh() {
  apps = [];
  get();
 }
+
+get();
+has(['chrome.exe', 'chrome']);
 
 module.exports = {
  get, has, refresh
