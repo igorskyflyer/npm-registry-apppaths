@@ -12,7 +12,7 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 ```getApps(normalize = false)```
 
-Returns a Promise containing an array of sub-key names located in the AppPaths key. Normalize determines whether the names of the executables are converted to lowercase.
+Returns an array of sub-keys located in the AppPaths key. Normalize determines whether the names of the executables are converted to lowercase.
 
 normalize = true<br>
 Example output<br>
