@@ -22,7 +22,9 @@ normalize = false<br>
 Example output<br>
 ```['excel.exe', 'iexplore.exe', 'mplayer2.exe'...]```
 
-<br>
-Full example<br>
-```console.log(`Application list => ${getApps()}`);
 ```
+const appPaths = require('registry-apppaths');
+
+appPaths.getApps((apps) => {
+ console.log(apps);
+});```
