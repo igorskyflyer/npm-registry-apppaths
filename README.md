@@ -7,7 +7,6 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 ### Exports
 
  ```getApps()```
-<br><br>
 
 ### Usage
 
@@ -25,6 +24,5 @@ Example output<br>
 
 <br>
 Full example<br>
-```const appPaths = require('registry-apppaths');
-console.log(`Application list => ${getApps()}`);
+```console.log(`Application list => ${getApps()}`);
 ```
