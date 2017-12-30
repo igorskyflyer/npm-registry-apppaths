@@ -34,9 +34,11 @@ function generateKeys(data, normalize) {
  data.forEach((value) => {
   let key = value;
 
+  key = key.replace(searchKey, '');
+
   if(normalize) key = key.toLowerCase();
 
-  apps.push(key.replace(searchKey, ''));
+  apps.push(key);
  });
 }
 
