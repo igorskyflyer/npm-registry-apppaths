@@ -29,7 +29,7 @@ console.log(apps);
 
 <br>
 
-```.has(list) => boolean[]```
+```.has(list: string[]) => boolean[]```
 
 Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system. 
 
