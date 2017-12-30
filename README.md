@@ -27,4 +27,5 @@ const appPaths = require('registry-apppaths');
 
 appPaths.getApps((apps) => {
  console.log(apps);
-});```
+});
+```
