@@ -1,6 +1,6 @@
 {
   "name": "registry-apppaths",
-  "version": "1.1.20",
+  "version": "1.1.21",
   "description": "A Node.js module for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt (batch).",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/igorskyflyer/node-registry-apppaths#readme",
   "dependencies": {
-    "chai": "^4.1.2"
+   "mocha": "^4.1.0",
+   "chai": "^4.1.2"
   }
 }

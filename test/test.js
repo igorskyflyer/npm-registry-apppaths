@@ -1,20 +1,32 @@
 const assert = require('chai').assert;
 const appPaths = require('../index');
 
-describe('AppPaths test', () => {
+describe('AppPaths', () => {
 
- describe('getApps()', () => {
+ describe('get()', () => {
 
   it('should be an array', () => {
-   assert.isArray(appPaths.getApps());
+   assert.isArray(appPaths.get());
   });
 
-  it('length should be >0', () => {
-   assert.isAbove(appPaths.getApps().length, 0);
+  it('length should be > 0', () => {
+   assert.isAbove(appPaths.get().length, 0);
   });
 
-  it('should be a string, ending with ".exe"', () => {
-   assert.isString(appPaths.getApps()[0]);
+  it('should be a string', () => {
+   assert.isString(appPaths.get()[0]);
+  });
+
+ });
+
+ describe('has()', () => {
+
+  it('should be an array', () => {
+   assert.isArray(appPaths.has(['iexplore.exe', 'foo']));
+  });
+
+  it('should be true', () => {
+   assert.isOk(appPaths.has(['iexplore.exe', 'foo'])[0]);
   });
 
  });
