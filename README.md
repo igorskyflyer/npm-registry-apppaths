@@ -69,3 +69,10 @@ console.log(apps);
 
 // ['chrome.exe', 'firefox.exe', 'opera.exe', 'winword.exe'...]
 ```
+
+### Test
+
+Open the project and execute:
+```
+npm run test
+```
