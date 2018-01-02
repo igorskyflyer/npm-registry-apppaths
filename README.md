@@ -9,6 +9,7 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 ```
 npm install registry-apppaths --save
 ```
+<br>
 
 ### Exports
 
