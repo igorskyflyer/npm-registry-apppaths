@@ -5,6 +5,7 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 *Uses the reg.exe, WINDOWS __ONLY!__*
 
 <br>
+
 ### Install
 
 ```
