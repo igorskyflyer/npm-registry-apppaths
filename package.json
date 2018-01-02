@@ -24,7 +24,7 @@
     "url": "https://github.com/igorskyflyer/node-registry-apppaths/issues"
   },
   "homepage": "https://github.com/igorskyflyer/node-registry-apppaths#readme",
-  "dependencies": {
+  "devDependencies": {
    "mocha": "^4.1.0",
    "chai": "^4.1.2"
   }
