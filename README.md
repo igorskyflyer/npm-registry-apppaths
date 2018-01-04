@@ -4,6 +4,11 @@ A Node.js module for reading the AppPaths registry key on Windows. Useful for re
 
 *Uses the reg.exe, WINDOWS __ONLY!__*
 
+### Like it? Buy me a beer.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/igorskyflyer)
+<br><br>
+
 ### Install
 
 ```
