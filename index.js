@@ -1,71 +1,66 @@
-const execSync = require('child_process').execSync;
+const spawnSync = require('child_process').spawnSync;
 
 const regKey = 'HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths';
-const searchKey = 'hkey_local_machine\\software\\microsoft\\windows\\currentversion\\app paths\\';
+const searchKey =
+	'hkey_local_machine\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\app paths\\\\';
+const pattern = new RegExp(searchKey, 'g');
 
-let apps;
+let apps = [];
 
 function get() {
- if(apps && apps.length) return apps;
+	if (apps.length > 0) {
+		return apps;
+	}
 
- let output;
+	try {
+		const shell = spawnSync('reg', ['query', regKey], {
+			stdio: 'pipe'
+		});
+		let output = shell.stdout.toString();
 
- try {
-  const now = Date.now();
-  const query = execSync(`reg query "${regKey}" && exit`);
+		output = output.toLowerCase().replace(pattern, '');
+		apps = output.split('\r\n');
 
-  if(!query) return [];
+		if (apps.length > 1) {
+			apps.shift();
+			apps.pop();
+		}
+	} catch (exp) {
+		console.error(exp);
+		return apps;
+	}
 
-  output = query.toString().toLowerCase();
-  generateKeys(output);
- }
- catch(exp) {
-  console.log(exp);
-  return [];
- }
-
- return apps;
+	return apps;
 }
 
 function has(list) {
- if(!list || !list instanceof Array || !list.length) return [];
+	const count = list.length;
 
- let result = [];
- 
- if(!apps || !apps.length) apps = get();
+	if (!list || !list instanceof Array || count === 0) {
+		return apps;
+	}
 
- for(let i = 0, count = list.length; i < count; i++) {
-  let isPresent = (apps.indexOf(list[i]) > -1);
+	const result = [];
 
-  result.push(isPresent);
+	if (apps.length === 0) {
+		apps = get();
+	}
 
-  if(isPresent) continue;
- }
+	for (let i = 0; i < count; i++) {
+		const matchFound = apps.indexOf(list[i]) > -1;
+		result.push(matchFound);
+	}
 
- return result;
-}
-
-function generateKeys(data) {
- data = data.split('\r\n');
-
- if(data.length === 0) return;
-
- apps = [];
-
- data.pop();
- data.shift();
-
- data.forEach((value) => {
-  value = value.replace(searchKey, '');
-  apps.push(value);
- });
+	return result;
 }
 
 function refresh() {
- apps = [];
- return get();
+	apps = [];
+	return get();
 }
 
 module.exports = {
- get, has, refresh
-}
+	get,
+	has,
+	refresh
+};
