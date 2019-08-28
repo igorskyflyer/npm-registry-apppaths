@@ -83,6 +83,26 @@ console.log(apps);
 
 <br>
 
+### Changelog
+
+## 1.2.2
+
+Updated the `refresh()` method to reflect the specifications described in this document
+
+## 1.2
+
+Improved performance
+
+## 1.1
+
+Added the `refresh()` method that enables you to do a force refresh of the data - instead of returning the cached data when using the `get()` method
+
+## 1.0
+
+Initial release
+
+<br>
+
 ### Development
 
 ```

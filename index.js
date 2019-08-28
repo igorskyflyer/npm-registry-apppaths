@@ -56,7 +56,6 @@ function has(list) {
 
 function refresh() {
 	apps = [];
-	return get();
 }
 
 module.exports = {
