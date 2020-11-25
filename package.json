@@ -26,6 +26,9 @@
 	"homepage": "https://github.com/igorskyflyer/node-registry-apppaths#readme",
 	"devDependencies": {
 		"chai": "^4.2.0",
-		"mocha": "^6.2.0"
+		"mocha": "^8.2.1"
+	},
+	"dependencies": {
+		"@igor.dvlpr/regkeys": "^1.0.5"
 	}
 }
