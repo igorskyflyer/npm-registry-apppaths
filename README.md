@@ -33,10 +33,10 @@ npm install registry-apppaths --save
 Returns an array of sub-keys located in the AppPaths key.
 
 ```
-const appPaths = require('registry-apppaths');
-const apps = appPaths.get();
+const appPaths = require('registry-apppaths')
+const apps = appPaths.get()
 
-console.log(apps);
+console.log(apps)
 
 // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 ```
@@ -48,10 +48,10 @@ console.log(apps);
 Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system.
 
 ```
-const appPaths = require('registry-apppaths');
-const has = appPaths.has(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe']);
+const appPaths = require('registry-apppaths')
+const has = appPaths.has(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe'])
 
-console.log(has);
+console.log(has)
 
 // [true, true, false]
 ```
@@ -63,20 +63,20 @@ console.log(has);
 Force refresh the info from the registry, instead of retrieving the cached data.
 
 ```
-const appPaths = require('registry-apppaths');
-let apps = appPaths.get();
+const appPaths = require('registry-apppaths')
+let apps = appPaths.get()
 
-console.log(apps);
+console.log(apps)
 
 // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 
 // application install method...
 
-appPaths.refresh();
+appPaths.refresh()
 
-apps = appPaths.get();
+apps = appPaths.get()
 
-console.log(apps);
+console.log(apps)
 
 // ['chrome.exe', 'firefox.exe', 'opera.exe', 'winword.exe'...]
 ```
