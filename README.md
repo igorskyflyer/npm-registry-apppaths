@@ -11,7 +11,7 @@ _Uses the reg.exe, WINDOWS **ONLY!**_
 
 ### Install
 
-```
+```shell
 npm install registry-apppaths --save
 ```
 
@@ -32,7 +32,7 @@ npm install registry-apppaths --save
 
 Returns an array of sub-keys located in the AppPaths key.
 
-```
+```js
 const appPaths = require('registry-apppaths')
 const apps = appPaths.get()
 
@@ -47,7 +47,7 @@ console.log(apps)
 
 Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system.
 
-```
+```js
 const appPaths = require('registry-apppaths')
 const has = appPaths.has(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe'])
 
@@ -62,7 +62,7 @@ console.log(has)
 
 Force refresh the info from the registry, instead of retrieving the cached data.
 
-```
+```js
 const appPaths = require('registry-apppaths')
 let apps = appPaths.get()
 
@@ -105,20 +105,20 @@ Initial release
 
 ### Development
 
-```
+```shell
 git clone https://github.com/igorskyflyer/node-registry-apppaths.git
 ```
 
 followed by a,
 
-```
-npm install
+```shell
+npm i
 ```
 
 ### Test
 
 Open the project and execute:
 
-```
-npm run test
+```shell
+npm test
 ```
