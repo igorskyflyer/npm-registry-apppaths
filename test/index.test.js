@@ -18,11 +18,11 @@ describe('AppPaths', () => {
 
   describe('has()', () => {
     it('should be an array', () => {
-      assert.isArray(appPaths.has(['iexplore.exe', 'foo']))
+      assert.isArray(appPaths.has(['wordpad.exe', 'foo']))
     })
 
     it('should be true', () => {
-      assert.isOk(appPaths.has(['iexplore.exe', 'foo'])[0])
+      assert.isOk(appPaths.has(['wordpad.exe', 'foo'])[0])
     })
   })
 })
