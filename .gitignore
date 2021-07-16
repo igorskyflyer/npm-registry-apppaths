@@ -62,3 +62,5 @@ typings/
 
 # Prettier config
 .prettierrc
+
+dist/
