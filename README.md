@@ -1,4 +1,4 @@
-# Registry AppPaths
+# 🪀 Registry AppPaths 🗃
 
 A Node.js module for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt.
 
@@ -7,7 +7,13 @@ _Uses the reg.exe, WINDOWS **ONLY!**_
 ### Like it? Buy me a beer.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/igorskyflyer)
-<br><br>
+<br>
+
+<br>
+
+✨Since version `2.0.0` `CommentIt!` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
+
+<br>
 
 ### Install
 
