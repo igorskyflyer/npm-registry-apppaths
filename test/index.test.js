@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-const appPaths = require('../index')
+const appPaths = require('../src/index.js')
 
 describe('AppPaths', () => {
   describe('get()', () => {
