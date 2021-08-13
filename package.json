@@ -6,7 +6,7 @@
 		"node": ">=12.17"
 	},
 	"sideEffects": false,
-	"main": "index",
+	"main": "index.js",
 	"exports": {
 		".": {
 			"require": "./dist/compat/index.js",
@@ -24,7 +24,7 @@
 		"dts": "tsc --d --emitDeclarationOnly --declarationDir ./dist/types",
 		"build": "npm run cjs && npm run esm && npm run dts",
 		"test": "mocha",
-		"pub": "npm test && tsc && npm publish"
+		"pub": "npm test && npm run build && npm publish"
 	},
 	"repository": {
 		"type": "git",
