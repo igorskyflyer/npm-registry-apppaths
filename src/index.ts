@@ -1,17 +1,17 @@
-const RegKeys = require('@igor.dvlpr/regkeys')
+import RegKeys from '@igor.dvlpr/regkeys'
 
 const appPathsKey = 'HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths'
 const registry = new RegKeys(appPathsKey)
 
 /**
- * Synchronously gets AppPaths.
+ * Synchronously gets all keys from AppPaths.
  *
  * NOTE: Results are **cached** internally!
  * @param {boolean} [forceRefresh=false]
  * @throws Throws an error if the host machine is not running Windows OS.
  * @returns {string[]}
  */
-function get(forceRefresh = false) {
+function get(forceRefresh: boolean = false): string[] {
   return registry.get(forceRefresh)
 }
 
@@ -21,7 +21,7 @@ function get(forceRefresh = false) {
  * @param {boolean} [caseSensitive=false]
  * @returns {boolean[]}
  */
-function has(keys, caseSensitive = false) {
+function has(keys: string[], caseSensitive: boolean = false): boolean[] {
   return registry.hasKeys(keys, caseSensitive)
 }
 
@@ -29,12 +29,8 @@ function has(keys, caseSensitive = false) {
  * Clears the cached result, if any.
  * @returns {void}
  */
-function refresh() {
+function refresh(): void {
   registry.clear()
 }
 
-module.exports = {
-  get,
-  has,
-  refresh,
-}
+export { get, has, refresh }
