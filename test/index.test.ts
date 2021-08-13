@@ -1,5 +1,5 @@
-const assert = require('chai').assert
-const appPaths = require('../src/index.js')
+import { assert } from 'chai'
+import * as appPaths from '../src/index'
 
 describe('AppPaths', () => {
   describe('get()', () => {
