@@ -11,7 +11,7 @@ const registry = new RegKeys(appPathsKey)
  * @throws Throws an error if the host machine is not running Windows OS.
  * @returns {string[]}
  */
-function get(forceRefresh: boolean = false): string[] {
+function get(forceRefresh = false) {
   return registry.get(forceRefresh)
 }
 
@@ -21,7 +21,7 @@ function get(forceRefresh: boolean = false): string[] {
  * @param {boolean} [caseSensitive=false]
  * @returns {boolean[]}
  */
-function has(keys: string[], caseSensitive: boolean = false): boolean[] {
+function has(keys, caseSensitive = false) {
   return registry.hasKeys(keys, caseSensitive)
 }
 
@@ -29,7 +29,7 @@ function has(keys: string[], caseSensitive: boolean = false): boolean[] {
  * Clears the cached result, if any.
  * @returns {void}
  */
-function refresh(): void {
+function refresh() {
   registry.clear()
 }
 
