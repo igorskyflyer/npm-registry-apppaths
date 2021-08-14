@@ -1,12 +1,13 @@
 {
 	"name": "registry-apppaths",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "🪀 A Node.js module for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt. 🗃",
+	"type": "module",
 	"engines": {
 		"node": ">=12.17"
 	},
 	"sideEffects": false,
-	"main": "index.js",
+	"main": "./dist/compat/index.js",
 	"exports": {
 		".": {
 			"require": "./dist/compat/index.js",
@@ -20,7 +21,7 @@
 	],
 	"scripts": {
 		"cjs": "tsc -m CommonJS -t ES5 --outDir ./dist/compat && hybridize --out ./dist/compat --module cjs --overwrite",
-		"esm": "tsc -m ES6 -t ES6 --outDir ./dist/module && hybridize --out ./dist/module --module esm --overwrite",
+		"esm": "tsc -m ES6 -t ES6 --outDir ./dist/module",
 		"dts": "tsc --d --emitDeclarationOnly --declarationDir ./dist/types",
 		"build": "npm run cjs && npm run esm && npm run dts",
 		"test": "mocha",
@@ -51,7 +52,6 @@
 		"@types/mocha": "^9.0.0",
 		"chai": "^4.3.4",
 		"mocha": "^9.0.3",
-		"ts-node": "^10.2.0",
 		"typescript": "^4.3.5"
 	},
 	"dependencies": {
