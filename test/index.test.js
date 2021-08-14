@@ -1,5 +1,5 @@
 import { assert } from 'chai'
-import * as appPaths from '../src/index'
+import * as appPaths from '../src/index.js'
 
 describe('AppPaths', () => {
   describe('get()', () => {
