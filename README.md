@@ -106,5 +106,6 @@ npm i
 Open the project and execute:
 
 ```shell
+npm i
 npm test
 ```
