@@ -1,4 +1,4 @@
-import RegKeys from '@igor.dvlpr/regkeys'
+import { RegKeys } from '@igor.dvlpr/regkeys'
 
 const appPathsKey = 'HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths'
 const registry = new RegKeys(appPathsKey)
