@@ -73,7 +73,7 @@ console.log(has) // [true, true, false]
 
 <br>
 
-`.refresh(): void`
+`refreshAppPaths(): void`
 
 Force refresh the info from the registry, instead of retrieving the cached data.
 
