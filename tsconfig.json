@@ -3,19 +3,23 @@
 		"src/**/*"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules/**/*",
+		"test/**/*"
 	],
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": true,
+		"target": "ES2022",
+		"module": "NodeNext",
+		"declaration": true,
+		"outDir": "./dist",
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
+		"declarationDir": "./dist",
+		"moduleResolution": "nodenext",
 		"noEmitOnError": true,
-		"moduleResolution": "Node",
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"outDir": "./dist" // just to avoid TSC complaining
+		"noImplicitAny": true,
+		"noImplicitReturns": true
 	}
 }
