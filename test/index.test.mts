@@ -1,30 +1,30 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import { assert, describe, suite, test } from 'vitest'
-import { get, has } from '../src/index.mjs'
+import { getAppPaths, hasAppPaths } from '../src/index.mjs'
 
 describe('🧪 Registry AppPaths tests 🧪', () => {
-	suite('get()', () => {
+	suite('getAppPaths()', () => {
 		test('#1 should should be an array', () => {
-			assert.isArray(get())
+			assert.isArray(getAppPaths())
 		}) // #1
 
 		test('#2 length should be > 0', () => {
-			assert.isAbove(get().length, 0)
+			assert.isAbove(getAppPaths().length, 0)
 		}) // #2
 
 		test('#3 should be a string', () => {
-			assert.isString(get()[0])
+			assert.isString(getAppPaths()[0])
 		}) // #3
 	})
 
-	suite('has()', () => {
+	suite('hasAppPaths()', () => {
 		test('#4 should be an array', () => {
-			assert.isArray(has(['wordpad.exe', 'foo']))
+			assert.isArray(hasAppPaths(['wordpad.exe', 'foo']))
 		}) // #4
 
 		test('#5 should be true', () => {
-			assert.isTrue(has(['wordpad.exe', 'foo'])[0])
+			assert.isTrue(hasAppPaths(['wordpad.exe', 'foo'])[0])
 		}) // #5
 	})
 })
