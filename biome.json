@@ -20,6 +20,9 @@
 	},
 	"linter": {
 		"rules": {
+			"style": {
+				"noInferrableTypes": "off"
+			},
 			"suspicious": {
 				"noExplicitAny": "off"
 			}
