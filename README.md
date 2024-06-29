@@ -45,28 +45,28 @@ npm i "@igor.dvlpr/registry-apppaths"
 ## 🤹🏼 API
 
 
-`.get(): string[]`
+`getAppPaths(): string[]`
 
 Returns an array of sub-keys located in the AppPaths key.
 
 ```ts
-import { get } from '@igor.dvlpr/registry-apppaths'
+import { getAppPaths } from '@igor.dvlpr/registry-apppaths'
 
-const apps: string[] = get()
+const apps: string[] = getAppPaths()
 
 console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 ```
 
 <br>
 
-`.has(list: string[]): boolean[]`
+`hasAppPaths(list: string[]): boolean[]`
 
 Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system.
 
 ```ts
-import { has } from '@igor.dvlpr/registry-apppaths'
+import { hasAppPaths } from '@igor.dvlpr/registry-apppaths'
 
-const has: boolean[] = has(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe'])
+const has: boolean[] = hasAppPaths(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe'])
 
 console.log(has) // [true, true, false]
 ```
@@ -78,18 +78,18 @@ console.log(has) // [true, true, false]
 Force refresh the info from the registry, instead of retrieving the cached data.
 
 ```ts
-import { get } from '@igor.dvlpr/registry-apppaths'
+import { getAppPaths, refreshAppPaths } from '@igor.dvlpr/registry-apppaths'
 
-let apps: string[] = appPaths.get()
+let apps: string[] = getAppPaths()
 
 console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 
 // application install...
 // we installed Word for example
 
-appPaths.refresh()
+refreshAppPaths()
 
-apps = appPaths.get()
+apps = getAppPaths()
 
 console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe', 'winword.exe'...]
 ```
