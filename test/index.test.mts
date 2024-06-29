@@ -24,7 +24,7 @@ describe('🧪 Registry AppPaths tests 🧪', () => {
 		}) // #4
 
 		test('#5 should be true', () => {
-			assert.isOk(has(['wordpad.exe', 'foo'])[0])
+			assert.isTrue(has(['wordpad.exe', 'foo'])[0])
 		}) // #5
 	})
 })
