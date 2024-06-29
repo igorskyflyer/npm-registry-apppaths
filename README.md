@@ -51,11 +51,10 @@ Returns an array of sub-keys located in the AppPaths key.
 
 ```ts
 import { get } from '@igor.dvlpr/registry-apppaths'
+
 const apps: string[] = get()
 
-console.log(apps)
-
-// ['chrome.exe', 'firefox.exe', 'opera.exe'...]
+console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 ```
 
 <br>
@@ -64,13 +63,12 @@ console.log(apps)
 
 Returns an array of Booleans indicating whether the entries of the parameter **list** are installed on the system.
 
-```js
+```ts
 import { has } from '@igor.dvlpr/registry-apppaths'
+
 const has: boolean[] = has(['chrome.exe', 'winword.exe', 'mspaintTYPO.exe'])
 
-console.log(has)
-
-// [true, true, false]
+console.log(has) // [true, true, false]
 ```
 
 <br>
@@ -79,13 +77,12 @@ console.log(has)
 
 Force refresh the info from the registry, instead of retrieving the cached data.
 
-```js
+```ts
 import { get } from '@igor.dvlpr/registry-apppaths'
+
 let apps: string[] = appPaths.get()
 
-console.log(apps)
-
-// ['chrome.exe', 'firefox.exe', 'opera.exe'...]
+console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe'...]
 
 // application install...
 // we installed Word for example
@@ -94,9 +91,7 @@ appPaths.refresh()
 
 apps = appPaths.get()
 
-console.log(apps)
-
-// ['chrome.exe', 'firefox.exe', 'opera.exe', 'winword.exe'...]
+console.log(apps) // ['chrome.exe', 'firefox.exe', 'opera.exe', 'winword.exe'...]
 ```
 
 ---
