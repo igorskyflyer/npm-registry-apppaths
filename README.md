@@ -9,6 +9,8 @@
   🪀 A package for reading the AppPaths registry key on Windows. Useful for retrieving applications that can be launched from the command prompt. 🗃
 </h4>
 
+<br>
+
 > 🛑 **CAUTION**
 >
 > *WINDOWS ONLY*
