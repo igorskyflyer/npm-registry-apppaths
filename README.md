@@ -40,14 +40,14 @@
 
 ## 🤖 Features
 
-⚡ Instant results - reads Windows App Paths registry keys synchronously
-🗂 Full list retrieval - grab all registered app paths in one call
-🧠 Smart caching - avoids repeated registry lookups for faster performance
-🔄 Force refresh - bypass cache when you need the latest data
-🔍 Key presence check - verify if specific apps are registered
-🔠 Case sensitivity option - match keys exactly or loosely
-🧹 Cache clear - reset stored results anytime
-💻 Windows-only - throws error if run on non‑Windows systems
+- ⚡ Instant results - reads Windows App Paths registry keys synchronously
+- 🗂 Full list retrieval - grab all registered app paths in one call
+- 🧠 Smart caching - avoids repeated registry lookups for faster performance
+- 🔄 Force refresh - bypass cache when you need the latest data
+- 🔍 Key presence check - verify if specific apps are registered
+- 🔠 Case sensitivity option - match keys exactly or loosely
+- 🧹 Cache clear - reset stored results anytime
+- 💻 Windows-only - throws error if run on non‑Windows systems
 
 <br>
 <br>
