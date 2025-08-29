@@ -1,10 +1,9 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-// @ts-ignore
-import { RegKeys } from '@igor.dvlpr/regkeys'
+import { RegKeys } from '@igorskyflyer/regkeys'
 
 const appPathsKey: string =
-	'HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths'
+  'HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths'
 const registry: RegKeys = new RegKeys(appPathsKey)
 
 /**
@@ -15,7 +14,7 @@ const registry: RegKeys = new RegKeys(appPathsKey)
  * @throws Throws an error if the host machine is not running Windows OS.
  */
 export function getAppPaths(forceRefresh: boolean = false): string[] {
-	return registry.get(forceRefresh)
+  return registry.get(forceRefresh)
 }
 
 /**
@@ -24,15 +23,15 @@ export function getAppPaths(forceRefresh: boolean = false): string[] {
  * @param {boolean} [caseSensitive=false]
  */
 export function hasAppPaths(
-	keys: string[],
-	caseSensitive: boolean = false
+  keys: string[],
+  caseSensitive: boolean = false
 ): boolean[] {
-	return registry.hasKeys(keys, caseSensitive)
+  return registry.hasKeys(keys, caseSensitive)
 }
 
 /**
  * Clears the cached result, if any.
  */
 export function refreshAppPaths(): void {
-	registry.clear()
+  registry.clear()
 }
