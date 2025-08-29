@@ -20,11 +20,11 @@ describe('🧪 Registry AppPaths tests 🧪', () => {
 
   suite('hasAppPaths()', () => {
     test('#4 should be an array', () => {
-      assert.isArray(hasAppPaths(['wordpad.exe', 'foo']))
+      assert.isArray(hasAppPaths(['pwsh.exe', 'foo']))
     }) // #4
 
     test('#5 should be true', () => {
-      assert.isTrue(hasAppPaths(['wordpad.exe', 'foo'])[0])
+      assert.isTrue(hasAppPaths(['iexplore.exe', 'foo'])[0])
     }) // #5
   })
 })
