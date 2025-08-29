@@ -1,25 +1,21 @@
 {
-	"include": [
-		"src/**/*"
-	],
-	"exclude": [
-		"node_modules/**/*",
-		"test/**/*"
-	],
-	"compilerOptions": {
-		"target": "ES2022",
-		"module": "NodeNext",
-		"declaration": true,
-		"outDir": "./dist",
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"declarationDir": "./dist",
-		"moduleResolution": "nodenext",
-		"noEmitOnError": true,
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitAny": true,
-		"noImplicitReturns": true
-	}
+    "include": ["src/**/*"],
+    "exclude": ["node_modules/**/*", "test/**/*", "dist/**/*"],
+    "compilerOptions": {
+        "target": "ES2023",
+        "lib": ["ES2023"],
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "declaration": true,
+        "outDir": "./dist",
+        "declarationDir": "./dist",
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmitOnError": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true
+    }
 }
